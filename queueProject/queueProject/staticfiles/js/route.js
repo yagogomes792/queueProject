@@ -2,23 +2,46 @@
 // parameter when you first load the API. For example:
 // <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+let map, infoWindow;
+
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       mapTypeControl: false,
       center: { lat: -23.618237, lng: -46.635197 },
       zoom: 13,
     });
+    infoWindow = new google.maps.InfoWindow();
+    const locationButton = document.createElement("button");
+    locationButton.textContent = "Clique para encontrar a localização atual.";
+    locationButton.classList.add("custom-map-control-button");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locationButton.addEventListener("click", () => {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("Location found.");
+          infoWindow.open(map);
+          map.setCenter(pos);
+        },
+        () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  });
+
+
     new AutocompleteDirectionsHandler(map);
   }
-  window.onload = function() {
-    var startPos;
-    var geoSuccess = function(position) {
-      startPos = position;
-      document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-      document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-    };
-    navigator.geolocation.getCurrentPosition(geoSuccess);
-  };
   
   class AutocompleteDirectionsHandler {
     constructor(map) {
@@ -108,4 +131,12 @@ function initMap() {
       );
     }
   }
-  
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }

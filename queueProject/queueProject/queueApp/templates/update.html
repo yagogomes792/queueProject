@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link href="{% static 'css/update.css' %}" rel="stylesheet" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDikjsB27i23XRQad382KBcFHKNxzZ--1w&callback=initMap&libraries=places&v=weekly" defer></script>
+
+
+        <title>Adicionar tempo de espera</title>
+    </head>
+<body style="background-image: url({%static 'img/cool-background.png' %});">
+    <div class="initial-block"></div>
+    
+    <header>
+    <div class="bg" style="background-image: url({%static 'img/01.jpg' %});">
+        <div class="header">
+            <div class="main-txt">
+            <h1 class="title">Queue</h1>
+            <p>O jeito fácil de evitar filas</p>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <p class="map-txt">Procure no mapa abaixo o estabelecimento em que deseja atualizar o tempo de espera.</p>
+    <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">Buscar Estabelecimento</div>
+        <div id="type-selector" class="pac-controls">
+          <input
+            type="radio"
+            name="type"
+            id="changetype-all"
+            checked="checked"
+          />
+          <label for="changetype-all">Todos</label>
+
+          <input type="radio" name="type" id="changetype-establishment" />
+          <label for="changetype-establishment">Estabelecimento</label>
+
+          <input type="radio" name="type" id="changetype-address" />
+          <label for="changetype-address">Endereço</label>
+
+         <!-- <input type="radio" name="type" id="changetype-geocode" />
+          <label for="changetype-geocode">Geocodes</label>-->
+        </div>
+       <!-- <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-strict-bounds" value="" />
+          <label for="use-strict-bounds">Strict Bounds</label>
+        </div>-->
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text" placeholder="Escreva o nome do local" />
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon" />
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
+    
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="default-picker">
+        <label for="date-picker"><p>Selecione a data em que compareceu ao estabelecimento:</p></label>
+        <input type="date" id="date-picker" class="form-control" placeholder="Data de comparecimento" value="adicionar data">       
+        <br>
+        <br>
+        <label for="default-picker"><p>Selecione o tempo de espera: (hrs:min) </p></label>
+        <input type="time" id="default-picker" class="form-control" placeholder="Tempo de espera" value="adicionar tempo">
+
+        <button type="button" onclick="saveTime();" class="save-time-btn class btn btn-primary">Salvar</button>
+      </div>
+    </form>
+
+
+    <div class="btnblock">
+      <a href="{% url 'route' %}" class="btn btn-primary btn-lg btn-block">Como chegar</a>
+      <br>
+      <a href="{% url 'home' %}" class="btn btn-primary btn-lg btn-block">Inicio</a>
+    </div>
+
+    <footer class="footer">
+        <p>© copyright Yago Gomes</p><br>
+    </footer>
+  
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/update.js' %}"></script>
+</body>
+</html>
+
+        

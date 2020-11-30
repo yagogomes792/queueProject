@@ -1,0 +1,375 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+        height: 70%;
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+      }
+      
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        font-family: 'Sansita Swashed', cursive;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      p {
+        color: red;
+        text-align: center;
+      }
+
+      .title {
+          color: red;
+          text-align: center;
+          margin-top: 10px;
+      }
+      .map-txt {
+        margin-top: 50px;
+      }
+      .main-txt {
+        padding-top: 75px;
+      }
+      
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+      
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+      
+      #infowindow-content {
+        display: none;
+      }
+      
+      #map #infowindow-content {
+        display: inline;
+      }
+      
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+      
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+      
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+      
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+      
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+      
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+
+      .calendar-text {
+        color: red;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .btn-block {
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+        background-color: red;
+        border-color: red;
+      }
+      .btn-block:hover {
+        background-color: rgb(248, 97, 97);
+        border-color: red;
+      }
+      .btnblock {
+        margin-top: 250px;
+      }
+    
+body {
+    font-size: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 2px;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+a, a:hover {
+    text-decoration: none;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    font-family: 'Sansita Swashed', cursive;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+
+.elegant-calencar {
+    width: 25em;
+    height: 31em;
+    border: 1px solid #c9c9c9;
+    -webkit-box-shadow: 0 0 5px #c9c9c9;
+    box-shadow: 0 0 5px #c9c9c9;
+    text-align: center;
+    margin: 1.5em auto;
+    position: relative;
+    margin-bottom: 170px;
+}
+
+#header {
+    font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    height: 14em;
+    background-color: #2a3246;
+    margin-bottom: 1em;
+}
+
+.pre-button, .next-button {
+    margin-top: 2em;
+    font-size: 2.5em;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    color: #e66b6b;
+    border-radius: 50%;
+}
+
+.pre-button:hover, .next-button:hover {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.pre-button:active,.next-button:active{
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+.pre-button {
+    float: left;
+    margin-left: 0.5em;
+}
+
+.next-button {
+    float: right;
+    margin-right: 0.5em;
+}
+
+.head-info {
+    float: left;
+    width: 16em;
+}
+
+.head-day {
+    margin-top: 30px;
+    font-size: 8em;
+    line-height: 1;
+    color: #fff;
+}
+
+.head-month {
+    margin-top: 20px;
+    font-size: 2em;
+    line-height: 1;
+    color: #fff;
+}
+
+#calendar {
+    width: 82%;
+    margin: 0 auto;
+}
+
+#calendar tr {
+    height: 2em;
+    line-height: 2em;
+}
+
+thead tr {
+    color: #e66b6b;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+tbody tr {
+    color: #252a25;
+}
+
+tbody td{
+    width: 14%;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition:all 0.2s ease-in;
+    transition:all 0.2s ease-in;
+}
+
+tbody td:hover, .selected {
+    color: #fff;
+    background-color: #2a3246;
+    border: none;
+}
+
+tbody td:active {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+#today {
+    background-color: #e66b6b;
+    color: #fff;
+    font-family: serif;
+    border-radius: 50%;
+}
+
+#disabled {
+    cursor: default;
+    background: #fff;
+}
+
+#disabled:hover {
+    background: #fff;
+    color: #c9c9c9;
+}
+
+#reset {
+    display: block;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    z-index: 999;
+    color: #fff;
+    font-family: serif;
+    cursor: pointer;
+    padding: 0 0.5em;
+    height: 1.5em;
+    border: 0.1em solid #fff;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#reset:hover {
+    color: #e66b6b;
+    border-color: #e66b6b;
+}
+
+#reset:active{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);     
+}
+
+.md-outline {
+    width: 30%;
+    margin-left: 35.2%;
+    text-align: center;
+}
+.save-time-btn {
+    margin-top: 25px;
+    margin-right: 10px;
+    background-color: red;
+    border-color: red;
+}
+.save-time-btn:hover {
+    background-color: rgb(248, 97, 97);
+    border-color: red;
+}
+.default-picker {
+    text-align: center;
+    margin-top: 40px;
+}
+#default-picker {
+  text-align: center;
+}
+
+.header {
+    background-color: rgba(151, 151, 151, 0.384);
+    height: 500px;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .initial-block {
+    background-color: red;
+    height: 50px;
+  }

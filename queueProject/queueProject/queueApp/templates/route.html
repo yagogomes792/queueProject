@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link href="{% static 'css/route.css' %}" rel="stylesheet" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDikjsB27i23XRQad382KBcFHKNxzZ--1w&callback=initMap&libraries=places&v=weekly"defer></script>
+
+
+        <title>Encontrar rota</title>
+    </head>
+    <body style="background-image: url({%static 'img/cool-background.png' %});">
+        <div class="initial-block"></div>
+        <header>
+            <div class="bg" style="background-image: url({%static 'img/01.jpg' %});">
+                <div class="header">
+                  <div class="main-txt">
+                    <h1 class="title">Queue</h1>
+                    <p>O jeito fácil de evitar filas</p>
+                  </div>
+                </div>
+            </div>
+        </header>
+
+        <p class="map-txt">Coloque no mapa abaixo o local de partida e de destino para encontrar a melhor rota.</p>
+    <div style="display: none">
+      <input
+        id="origin-input"
+        class="controls"
+        type="text"
+        placeholder="Enter an origin location"
+      />
+
+      <input
+        id="destination-input"
+        class="controls"
+        type="text"
+        placeholder="Enter a destination location"
+      />
+
+      <div id="mode-selector" class="controls">
+        <input
+          type="radio"
+          name="type"
+          id="changemode-walking"
+          checked="checked"
+        />
+        <label for="changemode-walking">A pé</label>
+
+        <input type="radio" name="type" id="changemode-transit" />
+        <label for="changemode-transit">Trânsito</label>
+
+        <input type="radio" name="type" id="changemode-driving" />
+        <label for="changemode-driving">Dirigindo</label>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <a href="{% url 'update' %}" class="btn btn-primary btn-lg btn-block">Adicionar tempo de espera</a>
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-primary btn-lg btn-block">Inicio</a>
+
+    <footer class="footer">
+      <p>© copyright Yago Gomes</p><br>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/route.js' %}"></script>
+</body>
+</html>

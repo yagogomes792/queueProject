@@ -127,14 +127,30 @@ function initMap() {
 
 function saveTime() {
     var waitTime = document.getElementById("default-picker").value;
-    var waitDate = document.getElementById("date-picker").value;
-    var today = new Date();
+    var waitDate = document.getElementById("datePickerId").value;
+    var address = document.getElementById("adrress-picker").value;
 
-    waitDate = new Date(waitDate);
 
-    if(waitDate > today){
-        alert("A data inserida não pode ser maior do que a data atual.")
-    }else{
-        alert("O tempo de espera foi adicionado corretamente. Obrigado pela colaboração =)")
+    if(address != null && waitTime != null && waitDate == "" || waitDate == null){
+      alert("data vazia");
+      return false;
     }
+    
+    if(waitDate === "" || waitDate === null){
+      alert("O campo de data está em branco");
+      return false;
+    }
+
+    if(waitTime == "" || waitTime == null){
+      alert("O campo de tempo está em branco");
+      return false;
+    }
+
+    if(address == "" || address == null){
+      alert("O campo de endereço está em branco");
+      return false;
+    }
+    
 }
+
+datePickerId.max = new Date().toISOString().split("T")[0];

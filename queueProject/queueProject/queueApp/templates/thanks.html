@@ -15,38 +15,17 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDikjsB27i23XRQad382KBcFHKNxzZ--1w&callback=initAutocomplete&libraries=places&v=weekly"defer></script>
 
-
-        <title>The Queue</title>
     </head>
 <body style="background-image: url({%static 'img/cool-background.png' %});">
     <div class="initial-block"></div>
-
-    <header>
-    <div class="bg" style="background-image: url({%static 'img/01.jpg' %});">
-        <div class="header">
-          <div class="main-txt">
-            <a href="{% url 'home' %}" class="link-btn">
-              <h1 class="title">Queue</h1>
-              <p>O jeito fácil de evitar filas</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <p class="map-txt">Procure pelo estabelcimento no mapa abaixo.</p>
-    <input
-      id="pac-input"
-      class="controls"
-      type="text"
-      placeholder="Search Box"
-    />
-    <div id="map"></div>
-
-    
-    <a href="{% url 'update' %}" class="btn btn-primary btn-lg btn-block">Adicionar tempo de espera</a>
-    <br>
-    <a href="{% url 'route' %}" class="btn btn-primary btn-lg btn-block">Como chegar</a>
+    <h1 class="title">Obrigado pela colaboração</h1>
+    <p>Você será redicerionado em 5 segundos</p>
+    <script>
+        var timer = setTimeout(function() {
+            window.location='/'
+        }, 5000);
+    </script>
+    </div>
 
     <footer class="footer">
       <p>© copyright Yago Gomes</p><br>

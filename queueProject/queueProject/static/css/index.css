@@ -132,3 +132,6 @@
       .gb-img {
         height: 500px;
       }
+      .link-btn:hover {
+        text-decoration: none;
+      }

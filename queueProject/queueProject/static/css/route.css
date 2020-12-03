@@ -62,10 +62,10 @@
       }
 
       .title {
-          color: red;
-          text-align: center;
-          margin-top: 10px;
-      }
+        color: red;
+        text-align: center;
+        font-size: 80px;
+    }
       .map-txt {
         margin-top: 50px;
       }
@@ -93,10 +93,13 @@
         text-align: center;
         margin-top: 100px;
       }
-      .initial-block {
-        background-color: red;
-        height: 50px;
-      }
+
       .link-btn:hover {
         text-decoration: none;
+      }
+      #navbrand, #navlink{
+        color: white;
+      }
+      #linkedin{
+        height: 25px;
       }

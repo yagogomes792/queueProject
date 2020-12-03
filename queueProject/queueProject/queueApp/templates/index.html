@@ -18,8 +18,24 @@
 
         <title>The Queue</title>
     </head>
+    
 <body style="background-image: url({%static 'img/cool-background.png' %});">
-    <div class="initial-block"></div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: red;">
+      <a class="navbar-brand" id="navbrand" href="{% url 'home' %}"><b>Queue</b></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" id="navlink" href="{% url 'about' %}">Sobre nós <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" id="navlink" href="http://www.linkedin.com/in/yago-gomes" target="_blank"><img src="{% static '/img/linkedin.png' %}" alt="" id="linkedin"><span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <header>
     <div class="bg" style="background-image: url({%static 'img/01.jpg' %});">

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+
+        <title>Sobre nós</title>
+
+    </head>
+    
+<body style="background-image: url({%static 'img/cool-background.png' %});">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: red;">
+        <a class="navbar-brand" id="navbrand" href="{% url 'home' %}"><b>Queue</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" id="navlink" href="{% url 'about' %}">Sobre nós <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" id="navlink" href="http://www.linkedin.com/in/yago-gomes" target="_blank"><img src="{% static '/img/linkedin.png' %}" alt="" id="linkedin"><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="about-text">
+        <p>
+            Temos o objetivo de minimizar o tempo de espera nos estabelecimentos, ajudando as pessoas a passarem menos tempo em filas e evitar horários de maior aglomeração.
+            <br>
+            O aplicativo provê mapas onde é possivel localizar o estabelecimento e ver em tempo real a movimentação de pessoas, além mostrar um histórico com os dias da semana e horários de maior movimento. Também é disponibilizado um campo para você adicionar o tempo que levou para ser atendido no estabelecimento e nos ajudar a incrementar ainda mais a nossa base de dados.
+            <br>
+            Obrigado por usar nossa aplicação.
+        </p>
+    </div>
+
+
+    <footer class="footer">
+      <p>© copyright Yago Gomes</p><br>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

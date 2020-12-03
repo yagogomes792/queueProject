@@ -135,3 +135,19 @@
       .link-btn:hover {
         text-decoration: none;
       }
+      #navbrand, #navlink{
+        color: white;
+      }
+      #linkedin{
+        height: 25px;
+      }
+
+      .about-text{
+        background-color: white;
+        width: 600px;
+        margin: auto;
+        margin-top: 100px;
+        letter-spacing: 1.5px;
+        line-height: 2em;
+        font-size: 25px;
+      }

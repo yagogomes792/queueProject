@@ -22,10 +22,10 @@
       }
 
       .title {
-          color: red;
-          text-align: center;
-          margin-top: 10px;
-      }
+        color: red;
+        text-align: center;
+        font-size: 80px;
+    }
       .map-txt {
         margin-top: 50px;
       }
@@ -221,4 +221,14 @@ body{
   }
   .link-btn:hover {
     text-decoration: none;
+  }
+
+  .link-btn:hover {
+    text-decoration: none;
+  }
+  #navbrand, #navlink{
+    color: white;
+  }
+  #linkedin{
+    height: 25px;
   }
